@@ -47,7 +47,7 @@ class TTTModel:
   # Computer gets a turn, various methods
 
   # random entry cannot go into an infinite loop so has to find valid locations first
-  def randomEntry(self, value="Y"):
+  def randomEntry(self, value="O"):
     validLocations = []
     for i in [0,1,2]:
       for j in [0,1,2]:
@@ -60,5 +60,5 @@ class TTTModel:
       self.change(validLocations[location][0], validLocations[location][1],value)
       #print("TTTModel:randomEntry() selected i=",validLocations[location][0]," j=",validLocations[location][1],)
 
-  def computerTurn(self, value="Y"):
+  def computerTurn(self, value="O"):
     self.randomEntry(value)

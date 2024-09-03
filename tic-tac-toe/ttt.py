@@ -12,28 +12,13 @@ tttClass = tttModel.TTTModel()
 
 print( "Testing the tic tac toe program")
 
-
-
-# btn=[[]]
-# x=0
-# for i in [0,1,2]:
-#   for j in [0,1,2]:
-#     btn[i].append(x)
-#     x = x+1
-#   btn.append([])
-
-# for i in [0,1,2]:
-#   for j in [0,1,2]:
-#     print( btn[i][j])
-# newVals = tttClass.getArray()
-# print("new values ", newVals)
-
 ################################################################################################################
 # View: 
 # 
 
 def updateView(): # update all text strings in array
   newVal = tttClass.getArray() 
+  print(newVal)
   for i in range(len(tttClass.tttArray)):
     for j in range(len(tttClass.tttArray[0])):
       btnString[i][j].set(newVal[i][j])
@@ -59,6 +44,7 @@ def changeCell( row, column, value):
   else:
     # opponent gets a turn
     tttClass.computerTurn()
+    updateView()
     checkWinner()
 
 def resetArray():
